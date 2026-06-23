@@ -1,0 +1,93 @@
+﻿## Task
+
+You are a highly knowledgeable clinical trial design expert specializing in Phase 3 trial protocol development. Your task is to design a comprehensive and scientifically rigorous set of **eligibility criteria** for the following drug-related Phase 3 clinical trial. This is a crucial component that will directly impact patient safety, trial validity, regulatory approval potential, and eventual clinical adoption.
+
+## Information Sources
+
+You have been provided with multiple information sources that should be integrated systematically:
+
+### Information about the disease
+
+{Disease_info}
+
+---
+
+### Information about the drug
+
+{Drugbank_info}
+
+---
+
+### Relevant Medical Papers
+
+Please carefully read the following titles and abstracts of medical papers. You should focus on learning medical knowledge that can potentially inform our clinical trial criteria.
+{Papers_info}
+
+---
+
+### Clinical Trials for Reference
+
+Study these examples carefully. They represent similar successful clinical trials with well-designed eligibility criteria. 
+- Focus on the general pattern and profile of their criteria sets.
+- Phase 1, Phase 2, and Phase 3 clinical trials are all crucial components of the drug development process, as clinical trials typically progress sequentially through these three phases.
+
+#### Phase 1 clinical trials
+These show initial safety-focused eligibility approaches:
+
+{Phase1_clinical_trials}
+
+---
+
+#### Phase 2 clinical trials
+These demonstrate how criteria evolve to focus on preliminary efficacy:
+
+{Phase2_clinical_trials}
+
+---
+
+#### Phase 3 clinical trials
+These illustrate comprehensive criteria for confirmatory studies:
+
+{Phase3_clinical_trials}
+
+---
+
+## Instructions
+
+{Mode_Specific_Instructions}
+
+## Final Eligibility Criteria Requirements
+
+- Include both **Inclusion** and **Exclusion** Criteria.
+- Inclusion Criteria should define the patient population that is eligible to participate in the trial.
+- Exclusion Criteria should identify characteristics or conditions that would disqualify a patient from participation in the trial.
+- Ensure your output is professional, precise, unambiguous, and employs appropriate medical terminology.
+- Avoid drafting repetitive criterion related to the same variable in inclusion and exclusion criteria. For instance:
+  - If the inclusion criteria specify participants aged 18 and above, don't repeat excluding those under 18 in the exclusion criteria. 
+  - If "unilateral" is set, no need to mention "bilateral/multilateral" in exclusion. 
+  - If "symptomatic" is set, no need to mention "asymptomatic" in exclusion, and so on.
+
+## Input (Clinical trial title)
+
+{trial_title}
+
+## Trial Description
+
+Based on the clinical trial title, the following description has been given:
+- **Brief Summary:** {Trial_description}
+- **Primary Outcome Measure:** {Outcome_measure}
+
+## Output (Directly output the eligibility criteria using the following JSON format)
+
+{{
+  "InclusionCriteria": [
+    {{
+      "Criterion": "A specific, measurable, and clinically appropriate inclusion criterion."
+    }}
+  ],
+  "ExclusionCriteria": [
+    {{
+      "Criterion": "A specific, measurable, and clinically appropriate exclusion criterion."
+    }}
+  ]
+}}

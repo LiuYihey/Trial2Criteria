@@ -1,0 +1,34 @@
+## Task
+
+You are a highly knowledgeable clinical trial design expert. Your task is to design a comprehensive and scientifically rigorous set of **eligibility criteria** for the drug-related phase 3 clinical trial. 
+
+## Reference Cases
+
+You have been provided with the following similar or related successful clinical trial texts of different phases:
+1. **Phase 3 clinical trials:** {Phase3_clinical_trials}
+2. **Phase 2 clinical trials:** {Phase2_clinical_trials}
+3.  **Phase 1 clinical trials:** {Phase1_clinical_trials}
+
+## Background
+
+You have also been provided with the following key pieces of information:
+1. **Information about the disease:** {Disease_info}
+2. **Information about the drug:** {Drugbank_info}
+3. **Relevant Medical Papers:** {Papers_info}
+
+Additionally, based on the clinical trial title, the following details have been generated:
+- **Brief Summary:** {Trial_description}
+- **Primary Outcome Measure:** {Outcome_measure}
+
+## Eligibility Criteria Requirements
+
+1. Include both **Inclusion** and **Exclusion** Criteria.
+2. Inclusion Criteria should define the patient population that is eligible to participate in the trial.
+3. Exclusion Criteria should identify characteristics or conditions that would disqualify a patient from participation in the trial.
+4. Ensure your output is professional, concise, and employs appropriate medical terminology.
+
+## Input (Clinical Trial Title)
+
+{trial_title}
+
+## Output

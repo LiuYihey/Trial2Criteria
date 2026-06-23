@@ -1,0 +1,125 @@
+﻿## Task
+
+You are a highly knowledgeable clinical trial design expert specializing in Phase 3 trial protocol development. Your task is to design a comprehensive and scientifically rigorous set of **eligibility criteria** for the following drug-related Phase 3 clinical trial. This is a crucial component that will directly impact patient safety, trial validity, regulatory approval potential, and eventual clinical adoption.
+
+## Information Sources
+
+You have been provided with multiple information sources that should be integrated systematically:
+
+### Information about the disease
+
+{Disease_info}
+
+---
+
+### Information about the drug
+
+{Drugbank_info}
+
+---
+
+### Relevant Medical Papers
+
+Please carefully read the following titles and abstracts of medical papers. You should focus on learning medical knowledge and extracting key *POINTS* that can potentially inform our clinical trial criteria.
+{Papers_info}
+
+---
+
+### Clinical Trials for Reference
+
+Study these examples carefully. They represent similar successful clinical trials with well-designed eligibility criteria. Analyze how they set up their criteria, and accomplish the following tasks:
+- Focus on the general pattern and profile of their criteria sets, and establish *LESSONS* which we can apply to our trial.
+- Phase 1, Phase 2, and Phase 3 clinical trials are all crucial, given the sequential progression of all clinical trials through these phases.
+
+#### Phase 1 clinical trials
+These show initial safety-focused eligibility approaches:
+
+{Phase1_clinical_trials}
+
+---
+
+#### Phase 2 clinical trials
+These demonstrate how criteria evolve to focus on preliminary efficacy:
+
+{Phase2_clinical_trials}
+
+---
+
+#### Phase 3 clinical trials
+These illustrate comprehensive criteria for confirmatory studies:
+
+{Phase3_clinical_trials}
+
+---
+
+## Instructions
+
+{Mode_Specific_Instructions}
+
+## Reasoning Guidelines
+
+Before giving your final eligibility criteria, please carefully analyze the provided information and think about the relevant aspects that should be considered when formulating the criteria.
+
+- First, in the <thinking> tag, explain your thought process.
+  - You should include all key *POINTS* extracted from medical papers.
+  - You may apply *LESSONS* from similar successful clinical trials, considering analogous aspects and using appropriate metrics.
+  - For each trial aspect you have extracted from the provided documents, I encourage you to follow this structured reasoning approach:
+
+  ### Aspect [Number]: [Aspect Name]
+    💭 Rationale: 
+      - Start by thinking about a key aspect of the trial (e.g., patient demographics, safety, disease state).
+      - Explain why this aspect is important to consider.
+    🔎 Search:
+      - Find and cite evidence from the provided documents that informs this aspect.
+    🧩 Deduce:
+      - Discuss the appropriate specifics (such as variable type, range, etc.) of the potential criterion.
+      - Adjust the details of the potential criterion according to the model instruction.
+
+  Improve readability: 
+    - Do not leave blank lines between these three steps. 
+    - Leave a blank line between every two Aspects. 
+    - Do not forget the corresponding emojis and the ### before each Aspect.
+
+- Then, in the <answer> tag, present the criteria you have developed. 
+
+## Final Eligibility Criteria Requirements
+
+- Include both **Inclusion** and **Exclusion** Criteria.
+- Inclusion Criteria should define the patient population that is eligible to participate in the trial.
+- Exclusion Criteria should identify characteristics or conditions that would disqualify a patient from participation in the trial.
+- Ensure your output is professional, precise, unambiguous, and employs appropriate medical terminology.
+- Avoid drafting repetitive criterion related to the same variable in inclusion and exclusion criteria. For instance:
+  - If the inclusion criteria specify participants aged 18 and above, don't repeat excluding those under 18 in the exclusion criteria. 
+  - If "unilateral" is set, no need to mention "bilateral/multilateral" in exclusion. 
+  - If "symptomatic" is set, no need to mention "asymptomatic" in exclusion, and so on.
+
+## Input (Clinical trial title)
+
+{trial_title}
+
+## Trial Description
+
+Based on the clinical trial title, the following description has been given:
+- **Brief Summary:** {Trial_description}
+- **Primary Outcome Measure:** {Outcome_measure}
+
+## Output (Thinks-before-answers in the following format)
+
+<thinking>
+[Your thought process based on the reasoning guidelines]
+</thinking>
+
+<answer>
+{{
+  "InclusionCriteria": [
+    {{
+      "Criterion": "A specific, measurable, and clinically appropriate inclusion criterion based on your reasoning."
+    }}
+  ],
+  "ExclusionCriteria": [
+    {{
+      "Criterion": "A specific, measurable, and clinically appropriate exclusion criterion based on your reasoning."
+    }}
+  ]
+}}
+</answer>

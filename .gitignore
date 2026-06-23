@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Secrets & local config
+.env
+config.json
+api_key.md
+*.key
+*.pem
+
+# Local dev / scratch scripts
+_test_*.py
+_find_missing_disease.py
+_run_bench_test.bat
+bench_test.log
+
+# IDE
+.cursor/
+.vscode/
+.idea/
+
+# Runtime caches & generated outputs
+outputs/faiss_indexes/
+outputs/rag/*.jsonl
+outputs/rag/*.csv
+outputs/prompts/
+outputs/responses/
+outputs/bench_profiles/
+faiss_indexes/
+generation_logs/
+experiments_records/
+
+# Large data & model weights (download separately — see data/README.md)
+data/trial_gov/embeddings/*.pth
+data/trial_gov/retrieval_base/*.csv
+data/primekg/disease_features.csv
+data/drugbank/drugbank_data_raw.csv
+data/drugbank/*副本*
+vendor/trial2vec/trial2vec_env/
+vendor/trial2vec/pretrained_models/
+vendor/trial2vec/trial_search/*.pth
+vendor/trial2vec/trial_search/pretrained_trial2vec/latest.checkpoint.pth.tar
+vendor/primekg/kg.csv
+vendor/primekg/drug_features.csv
+vendor/primekg/disease_features.csv
+data_prep/drugbank/output.json
+
+# OS
+.DS_Store
+Thumbs.db

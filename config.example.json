@@ -1,0 +1,65 @@
+{
+    "faiss": {
+        "index_path": "outputs/faiss_indexes",
+        "distance_metric": "cosine"
+    },
+    "embedding_model": "paraphrase-multilingual-MiniLM-L12-v2",
+    "reranker_model": "BAAI/bge-reranker-large",
+    "api_keys": {
+        "entrez_email": ""
+    },
+    "llm": {
+        "base_url": "https://api.minimaxi.com/anthropic",
+        "api_key": "",
+        "model": "MiniMax-M2.7"
+    },
+    "disease_data": {
+        "csv_path": "data/primekg/disease_features.csv"
+    },
+    "drug_data": {
+        "csv_path": "data/drugbank/drugbank_data_v1.csv",
+        "use_synonyms": true
+    },
+    "app": {
+        "host": "127.0.0.1",
+        "port": 8000
+    },
+    "pubmed_search": {
+        "until_year": 2025,
+        "max_results": 300,
+        "batch_size": 2000,
+        "efetch_batch_size": 100,
+        "max_workers": 2,
+        "perform_secondary_search": false,
+        "perform_fallback_search": true,
+        "paper_similarity_threshold": 0.5
+    },
+    "trial_retrieval": {
+        "active_phases": ["phase1", "phase2", "phase3"],
+        "phases": {
+            "phase1": {
+                "emb_path": "data/trial_gov/embeddings/Phase1_emb_only_fields.pth",
+                "data_path": "data/trial_gov/retrieval_base/RAG_base_phase1.csv"
+            },
+            "phase2": {
+                "emb_path": "data/trial_gov/embeddings/Phase2_emb_only_fields.pth",
+                "data_path": "data/trial_gov/retrieval_base/RAG_base_phase2.csv"
+            },
+            "phase3": {
+                "emb_path": "data/trial_gov/embeddings/Phase3_emb_only_fields.pth",
+                "data_path": "data/trial_gov/retrieval_base/RAG_base_phase3.csv"
+            }
+        },
+        "model_dir": "vendor/trial2vec/trial_search/pretrained_trial2vec",
+        "bert_name": "vendor/trial2vec/pretrained_models/Bio_ClinicalBERT",
+        "trial_similarity_threshold": 0.5
+    },
+    "criteria_generation": {
+        "default_mode": "Standard",
+        "modes": {
+            "Standard": "Standard (Balanced Approach): \n- Objective: Balance scientific validity, patient safety, and recruitment feasibility.\n- Typical profile: Clinically justified thresholds; excludes known high-risk groups; allows common comorbidities with controls.",
+            "Broader": "Broader (Increased Generalizability): \n- Objective: Maximize real-world applicability and diversity, accepting minor increases in variability to reflect real-world patient mix.\n- Typical profile: Fewer exclusions; wider ranges (age, labs); Fewer lines of criteria.",
+            "Stringent": "Stringent (Maximized Internal Validity): \n- Objective: Reduce confounding and maximize signal detection for confirmatory efficacy, prioritizing internal validity over recruitment speed or generalizability.\n- Typical profile: Narrower disease definitions/staging; stricter lab/vital thresholds. More lines of criteria."
+        }
+    }
+}

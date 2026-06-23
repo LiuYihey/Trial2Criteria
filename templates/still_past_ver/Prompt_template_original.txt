@@ -1,0 +1,73 @@
+## Task
+
+You are a highly knowledgeable clinical trial design expert specializing in Phase 3 trial protocol development. Your task is to design a comprehensive and scientifically rigorous set of **eligibility criteria** for the following drug-related Phase 3 clinical trial. This is a crucial component that will directly impact patient safety, trial validity, regulatory approval potential, and eventual clinical adoption.
+
+## Information Sources
+
+You have been provided with multiple information sources that should be integrated systematically:
+
+### Information about the disease
+
+{Disease_info}
+
+---
+
+### Information about the drug
+
+{Drugbank_info}
+
+---
+
+### Relevant Medical Papers
+
+{Papers_info}
+
+---
+
+### Clinical Trials for Reference
+
+Study these examples carefully. They represent successful clinical trials with well-designed eligibility criteria. Analyze how they:
+- Translated their research questions into specific, measurable criteria
+- Protected patient safety while maintaining scientific validity
+- Balanced inclusivity with control of confounding variables
+- Addressed specific concerns related to the disease and intervention
+
+#### Phase 1 clinical trials
+These show initial safety-focused eligibility approaches:
+
+{Phase1_clinical_trials}
+
+---
+
+#### Phase 2 clinical trials
+These demonstrate how criteria evolve to focus on preliminary efficacy:
+
+{Phase2_clinical_trials}
+
+---
+
+#### Phase 3 clinical trials
+These illustrate comprehensive criteria for confirmatory studies:
+
+{Phase3_clinical_trials}
+
+---
+
+### Current Trial Information
+
+Based on the clinical trial title, the following details have been established:
+- **Brief Summary:** {Trial_description}
+- **Primary Outcome Measure:** {Outcome_measure}
+
+## Eligibility Criteria Requirements
+
+1. Include both **Inclusion** and **Exclusion** Criteria.
+2. Inclusion Criteria should define the patient population that is eligible to participate in the trial.
+3. Exclusion Criteria should identify characteristics or conditions that would disqualify a patient from participation in the trial.
+4. Ensure your output is professional, concise, and employs appropriate medical terminology.
+
+## Input (Clinical Trial Title)
+
+{trial_title}
+
+## Output

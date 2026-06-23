@@ -1,0 +1,100 @@
+## Task
+
+You are a highly knowledgeable clinical trial design expert. Your task is to generate a detailed, step-by-step reasoning process that reverse-engineers a given set of eligibility criteria. You must logically explain how the provided **Information Sources** lead to the exact wording and structure of the **successful Eligibility Criteria**. This output will be used for reasoning distillation, so the clarity, accuracy, and logical flow of your explanation are paramount.
+
+## Information Sources
+
+You have been provided with multiple information sources that should be integrated systematically:
+
+### Information about the disease
+
+{Disease_info}
+
+---
+
+### Information about the drug
+
+{Drugbank_info}
+
+---
+
+### Relevant Medical Papers
+
+Please carefully read the following titles and abstracts of medical papers. You should focus on learning medical knowledge and extracting key *POINTS* that can potentially inform our clinical trial criteria.
+{Papers_info}
+
+---
+
+### Clinical Trials for Reference
+
+Study these examples carefully. They represent similar successful clinical trials with well-designed eligibility criteria. Analyze how they set up their criteria, and accomplish the following tasks:
+- Focus on the general pattern and profile of their criteria sets, and establish *LESSONS* which we can apply to our trial.
+- Phase 1, Phase 2, and Phase 3 clinical trials are all crucial, given the sequential progression of all clinical trials through these phases.
+
+#### Phase 1 clinical trials
+These show initial safety-focused eligibility approaches:
+
+{Phase1_clinical_trials}
+
+---
+
+#### Phase 2 clinical trials
+These demonstrate how criteria evolve to focus on preliminary efficacy:
+
+{Phase2_clinical_trials}
+
+---
+
+#### Phase 3 clinical trials
+These illustrate comprehensive criteria for confirmatory studies:
+
+{Phase3_clinical_trials}
+
+---
+
+### successful Eligibility Criteria
+
+This is the target output of the reasoning process you must generate. Every part of your reasoning must contribute to explaining how an expert would arrive at this exact set of criteria.
+
+{eligibilityCriteria}
+
+---
+
+## Instructions
+
+Based on all the provided information, generate the detailed thought process that a clinical trial expert would follow to arrive at the **successful Eligibility Criteria**. Your sole output must be the reasoning process, formatted as described in the Reasoning Guidelines. Do not repeat or output the eligibility criteria themselves in your final response.
+
+## Reasoning Guidelines
+
+Please carefully analyze the provided information and think about the relevant aspects that should be considered when formulating the criteria. Your generated reasoning should explain how the provided information sources lead to the successful criteria.
+
+- **Start your response with a brief introductory paragraph.** This should set the context for the clinical trial design process, mentioning the trial's purpose. Feel free to use a natural, expert tone. For example: "We are designing a Phase 3 clinical trial for [Trial Subject], it is crucial to establish eligibility criteria that guarantee patient safety, data integrity, and feasibility. Based on a systematic review of the provided documents, we will now look into the following aspects:"
+- You should include all key *POINTS* extracted from medical papers.
+- You may apply *LESSONS* from similar successful clinical trials, considering analogous aspects and using appropriate metrics.
+- For each trial aspect you have extracted from the provided documents, I encourage you to follow this structured reasoning approach:
+
+### Aspect [Number]: [Aspect Name]
+  💭 Rationale:
+    - Start by thinking about a key aspect of the trial (e.g., patient demographics, safety, disease state).
+    - Explain why this aspect is important to consider.
+  🔎 Search:
+    - Find and cite evidence from the provided documents that informs this aspect.
+  🧩 Deduce:
+    - Synthesize the findings from the 'Rationale' and 'Search' steps to derive a specific, actionable criterion.
+    - Explain the logical steps that connect the evidence to your derived criterion, presenting it as a natural conclusion of your analysis.
+    - While you are aware of the final answer, your reasoning here must read as if you are arriving at the conclusion for the first time. The criterion you derive must perfectly match one from the **successful Eligibility Criteria** list.
+
+Improve readability:
+  - Do not leave blank lines between these three steps.
+  - Leave a blank line between every two Aspects.
+  - Do not forget the corresponding emojis and the ### before each Aspect.
+
+## Context for the Current Trial
+
+{trial_title}
+- **Brief Summary:** {Trial_description}
+- **Primary Outcome Measure:** {Outcome_measure}
+
+## Output (Reasoning Process)
+
+[Your thought process based on the reasoning guidelines]

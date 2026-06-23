@@ -1,0 +1,6 @@
+{"id": 1, "text": "这是斜体文本 需要去除HTML标签", "description": "测试HTML标签移除"}
+{"id": 2, "text": "Unicode字符 α2 和 Ⅲ 需要转换", "description": "测试Unicode转换"}
+{"id": 3, "text": "(Non dialysis [ND] and Dialysis [D]). 测试转义", "description": "测试转义符修复"}
+{"id": 4, "text": "6 to <12 years, 2 to <6 years, and 3 months to <2 years)", "description": "测试尖括号转义"}
+{"id": 5, "text": ">45 测试多重转义符", "description": "测试多重转义符"}
+{"id": 6, "text": "\n\n 测试", "description": "测试换行符"}

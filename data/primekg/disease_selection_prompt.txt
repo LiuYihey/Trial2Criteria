@@ -1,0 +1,22 @@
+## Task
+You are a professional medical expert. Your task is to select the most appropriate disease term for the {input} from the provided candidates.
+
+## Background Knowledge
+{disease_analysis}
+
+## Candidate Terms
+{matched_terms}
+
+## Instructions
+1. Based on the provided background knowledge and your medical expertise, find the disease term from the candidate list that EXACTLY matches the {input} disease.
+2. If multiple exact matches exist, select the most specific and clinically accurate term.
+3. If no exact match exists, select the closest parent category (often containing "(disease)" in the term).
+
+## Output Format
+Respond ONLY with a JSON object containing the selected term:
+```json
+{
+  "best_match": "selected term from the candidate list"
+}
+```
+DO NOT include any explanations, notes, or additional text outside of this JSON object.

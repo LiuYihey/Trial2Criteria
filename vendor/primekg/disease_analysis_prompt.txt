@@ -1,0 +1,18 @@
+## Task
+You are a professional medical expert. Your task is to analyze the disease term(s) "{input}" and provide a precise definition and a single, standardized medical term for it.
+
+## Instructions
+1. Analyze the input term(s) "{input}" using comprehensive medical knowledge. The input might contain multiple related terms, colloquialisms, or misspellings.
+2. Provide a clear and concise definition of the core underlying disease.
+3. List key characteristics including common symptoms, causes, and affected systems.
+4. From your analysis, determine the single, most appropriate and medically accurate term for the disease. This term should be a standardized name suitable for database lookups (e.g., "COVID-19" instead of "Corona Virus 2019", "Myocardial Infarction" instead of "Heart Attack").
+
+## Output Format
+Please provide your response in a single JSON object with the following structure. Do not include any text outside of the JSON object.
+```json
+{{
+  "best_term": "The single, most accurate and standardized medical term for the disease",
+  "definition": "Precise medical definition of the disease",
+  "key_characteristics": ["Key characteristic 1", "Key characteristic 2", "Key characteristic 3"]
+}}
+``` 

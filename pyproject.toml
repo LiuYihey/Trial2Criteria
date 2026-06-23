@@ -1,0 +1,17 @@
+[project]
+name = "trial2criteria"
+version = "0.1.0"
+description = "Four-domain RAG for clinical trial eligibility criteria generation"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[project.scripts]
+clinical-rag-batch = "clinical_rag.batch:main"
+clinical-rag-interactive = "clinical_rag.search:main"
+clinical-rag-prompts = "clinical_rag.pipeline.generate_prompts:main"
+clinical-rag-responses = "clinical_rag.pipeline.generate_responses:main"
+clinical-rag-reasoning = "clinical_rag.pipeline.generate_reasoning:main"
+clinical-rag-bench = "clinical_rag.bench_collector:main"
+
+[tool.setuptools.packages.find]
+include = ["clinical_rag*"]

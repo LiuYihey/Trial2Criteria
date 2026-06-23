@@ -1,0 +1,152 @@
+﻿## Task
+
+You are a highly knowledgeable clinical trial design expert specializing in Phase 3 trial protocol development. Your task is to design a comprehensive and scientifically rigorous set of **eligibility criteria** for the following drug-related Phase 3 clinical trial. This is a crucial component that will directly impact patient safety, trial validity, regulatory approval potential, and eventual clinical adoption.
+
+## Information Sources
+
+You have been provided with multiple information sources that should be integrated systematically:
+
+### Information about the disease
+
+{Disease_info}
+
+---
+
+### Information about the drug
+
+{Drugbank_info}
+
+---
+
+### Relevant Medical Papers
+
+{Papers_info}
+
+---
+
+### Clinical Trials for Reference
+
+Study these examples carefully. They represent successful clinical trials with well-designed eligibility criteria. Analyze how they:
+- Translated their research questions into specific, measurable criteria
+- Protected patient safety while maintaining scientific validity
+- Balanced inclusivity with control of confounding variables
+- Addressed specific concerns related to the disease and intervention
+
+#### Phase 1 clinical trials
+These show initial safety-focused eligibility approaches:
+
+{Phase1_clinical_trials}
+
+---
+
+#### Phase 2 clinical trials
+These demonstrate how criteria evolve to focus on preliminary efficacy:
+
+{Phase2_clinical_trials}
+
+---
+
+#### Phase 3 clinical trials
+These illustrate comprehensive criteria for confirmatory studies:
+
+{Phase3_clinical_trials}
+
+---
+
+### Current Trial Information
+
+Based on the clinical trial title, the following details have been established:
+- **Brief Summary:** {Trial_description}
+- **Primary Outcome Measure:** {Outcome_measure}
+
+## Eligibility Criteria Requirements
+
+### Critical Considerations
+1. **Safety Considerations**: Carefully evaluate risks based on drug mechanism, known adverse effects, and target population vulnerabilities.
+2. **Scientific Validity**: Ensure criteria support robust hypothesis testing and minimize confounding variables.
+3. **Statistical Power**: Consider how criteria affect sample size, recruitment feasibility, and study generalizability.
+4. **Ethical Standards**: Balance scientific rigor with inclusivity, avoiding unnecessary exclusions of demographic groups.
+5. **Regulatory Alignment**: Align criteria with FDA/EMA guidelines for Phase 3 trials of similar interventions.
+
+### Formatting Instructions
+1. Include both **Inclusion** and **Exclusion** Criteria with clear categorization.
+2. Use precise, measurable parameters.
+3. Organize criteria logically by systems or clinical relevance.
+4. Consider addressing these key categories:
+   - Demographics (age, sex, reproductive status)
+   - Disease characteristics (diagnosis, severity, duration, staging)
+   - Laboratory values and test results
+   - Prior/concomitant treatments
+   - Comorbidities
+   - Safety parameters
+   - Practical/logistical considerations
+
+## Input (Clinical Trial Title)
+
+{trial_title}
+
+## Output
+
+You must produce three evidence-grounded criteria sets (Standard, Broader, Stringent) using inline numeric citation tags and an appendix mapping. Implement ALL rules below:
+
+- Append inline numeric tags [1], [2], ... to any criterion that has supporting evidence from provided sources. 
+- A criterion may include multiple tags if supported by multiple sources (e.g., [2] [3]).
+- Do NOT fabricate sources or IDs. Only use evidence and IDs present in provided sources.
+- Link the criterion to the evidence source as much as possible.
+- After each criteria set, include a TRACEABILITY APPENDIX that maps each tag to its evidence, snippets, rationale, and certainty rating.
+- EvidenceSnippets should be directly quoted from provided sources and concise (≤ 2 sentences, end with an ellipsis).
+
+### Criteria Set Format (applies to all three sets)
+
+Use inline numeric tags and a per-set appendix. In every set, numbering restarts from [1]. A example of the format is shown below:
+
+INCLUSION CRITERIA:
+1. [Criterion text] [1]
+2. [Criterion text] [2] [3]
+...
+
+EXCLUSION CRITERIA:
+1. [Criterion text] [4]
+2. [Criterion text] [5]
+...
+
+TRACEABILITY APPENDIX
+[1]:
+  - EvidenceSources: [TRIAL:NCT..., PAPER:PMID..., DRUG:..., DISEASE:...]
+  - EvidenceSnippets: ["<=2 sentences", "<=2 sentences"]
+  - Rationale: Explanation connecting evidence to criterion
+  - Certainty: H | M | L
+[2]:
+  - EvidenceSources: [...]
+  - EvidenceSnippets: ["...", "..."]
+  - Rationale: ...
+  - Certainty: H | M | L
+[3]:
+  - EvidenceSources: [...]
+  - EvidenceSnippets: ["...", "..."]
+  - Rationale: ...
+  - Certainty: H | M | L
+...
+
+### Set-Specific Instructions (what differs across the three sets)
+
+1) Standard Criteria Set (Balanced Approach)
+- Objective: Balance scientific validity, patient safety, and recruitment feasibility.
+- Typical profile: Clinically justified thresholds; excludes known high-risk groups; allows common comorbidities with controls.
+- Trade-offs: Moderate inclusivity; maintain core safety labs/vitals and disease-definition rigor.
+
+2) Broader Criteria Set (Increased Generalizability)
+- Objective: Maximize real-world applicability and diversity while maintaining essential safety.
+- Typical profile: Fewer exclusions; wider ranges (age, labs) when clinically acceptable; allow stable comorbidities.
+- Required justification: For broadened items, explain safety controls and monitoring in Rationale; avoid compromising primary outcome integrity.
+
+3) Stringent Criteria Set (Maximized Internal Validity)
+- Objective: Reduce confounding and maximize signal detection for confirmatory efficacy.
+- Typical profile: Narrower disease definitions/staging; stricter lab/vital thresholds; limit concomitant therapies; require adherence predictors.
+- Required justification: Explain how restriction improves endpoint precision and reduces variability/confounding.
+
+### Evidence Grading System
+For each criterion you develop, classify the supporting evidence using this system:
+- **High Certainty [H]**: Multiple consistent sources support this criterion (e.g., multiple Phase 3 trials, strong drug mechanism evidence, clear disease guidelines)
+- **Moderate Certainty [M]**: Limited but clear evidence supports this criterion (e.g., consistent Phase 2 data, established clinical practice)
+- **Low Certainty [L]**: Theoretical basis or extrapolated evidence supports this criterion (e.g., mechanism-based reasoning, limited clinical data)

@@ -1,0 +1,28 @@
+# Core web UI
+fastapi>=0.95.0
+uvicorn[standard]>=0.22.0
+python-dotenv>=1.0.0
+jinja2>=3.1.2
+
+# Data & ML
+pandas>=1.5.0
+numpy>=1.23.0
+torch>=2.0.0
+transformers>=4.18.0
+sentence-transformers>=2.2.0
+scikit-learn>=1.2.0
+faiss-cpu>=1.7.0
+
+# NLP & embeddings
+langchain>=0.0.267
+langchain-community>=0.0.10
+langchain-huggingface>=0.0.1
+
+# Bio & APIs
+biopython>=1.81
+volcenginesdkarkruntime
+tqdm>=4.65.0
+requests>=2.31.0
+
+# Install Trial2Vec from vendor (editable):
+#   pip install -e vendor/trial2vec

@@ -1,12 +1,8 @@
 # Trial2Criteria
 
 <p align="center">
-  <video src="https://github.com/LiuYihey/Trial2Criteria/releases/download/demo-video/video-project.mp4" controls playsinline width="900"></video>
-</p>
-
-<p align="center">
   <a href="https://github.com/LiuYihey/Trial2Criteria/releases/download/demo-video/video-project.mp4">
-    <img src="docs/demo.gif" alt="Trial2Criteria demo video" width="900">
+    <img src="https://github.com/LiuYihey/Trial2Criteria/raw/main/docs/demo.gif" alt="Trial2Criteria demo video" width="900">
   </a>
 </p>
 

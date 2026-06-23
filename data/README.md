@@ -4,8 +4,8 @@ Place or symlink the following files here before running retrieval:
 
 ## DrugBank (`drugbank/`)
 
-- `drugbank_data_v1.csv` — processed DrugBank table (included in repo if small enough)
-- `drug_synonyms.csv` — optional synonym list
+- `drugbank_data_v1.csv` — processed DrugBank table (**not in repo**; generate locally)
+- `drug_synonyms.csv` — optional synonym list (**not in repo**)
 
 Generate from raw XML using scripts in `data_prep/drugbank/`.
 

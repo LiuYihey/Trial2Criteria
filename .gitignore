@@ -39,11 +39,15 @@ generation_logs/
 experiments_records/
 
 # Large data & model weights (download separately — see data/README.md)
+data/drugbank/*.csv
 data/trial_gov/embeddings/*.pth
 data/trial_gov/retrieval_base/*.csv
+data/trial_gov/test_sets/
 data/primekg/disease_features.csv
 data/drugbank/drugbank_data_raw.csv
 data/drugbank/*副本*
+data_prep/drugbank/*.csv
+data_prep/drugbank/output.json
 vendor/trial2vec/trial2vec_env/
 vendor/trial2vec/pretrained_models/
 vendor/trial2vec/trial_search/*.pth
@@ -51,7 +55,7 @@ vendor/trial2vec/trial_search/pretrained_trial2vec/latest.checkpoint.pth.tar
 vendor/primekg/kg.csv
 vendor/primekg/drug_features.csv
 vendor/primekg/disease_features.csv
-data_prep/drugbank/output.json
+vendor/primekg/fig/schematic.pdf
 
 # OS
 .DS_Store

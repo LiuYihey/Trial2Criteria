@@ -37,6 +37,8 @@ outputs/bench_profiles/
 faiss_indexes/
 generation_logs/
 experiments_records/
+final_bench.json
+trial_profile_*.json
 
 # Large data & model weights (download separately — see data/README.md)
 data/drugbank/*.csv

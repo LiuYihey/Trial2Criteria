@@ -86,20 +86,6 @@ python -m clinical_rag.batch
 python -m clinical_rag.pipeline.generate_prompts
 ```
 
-### Benchmark profile collection (`final_bench.json`)
-
-Collect four-domain RAG into `trial_profile_*.json` files (same format as `trial_profile_A_Randomized__*.json`):
-
-```bash
-# All 133 trials (supports resume via outputs/bench_profiles/manifest.json)
-clinical-rag-bench --input final_bench.json --output_dir outputs/bench_profiles
-
-# Single trial / smoke test
-python -m clinical_rag.bench_collector --nct_id NCT07552870 --limit 1
-```
-
-Output fields: `disease_info`, `drug_info`, `relevant_papers`, `similar_trials`.
-
 ### Interactive CLI
 
 ```bash

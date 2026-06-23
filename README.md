@@ -1,6 +1,8 @@
 # Trial2Criteria
 
-<video src="Video%20Project.mp4" controls width="100%"></video>
+<p align="center">
+  <video src="https://github.com/LiuYihey/Trial2Criteria/raw/main/video-project.mp4" controls playsinline width="100%"></video>
+</p>
 
 Four-domain retrieval-augmented generation for clinical trial eligibility criteria:
 
@@ -60,8 +62,6 @@ PubMed retrieval requires only an NCBI Entrez **email** — no API key.
 ```bat
 start_web.bat
 ```
-
-Open http://127.0.0.1:8000
 
 ### Batch pipeline
 

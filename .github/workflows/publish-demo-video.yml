@@ -1,0 +1,26 @@
+name: Publish demo video
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - video-project.mp4
+      - .github/workflows/publish-demo-video.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: demo-video
+          name: Demo video
+          body: Demo video asset for README embedding.
+          files: video-project.mp4
+          make_latest: false
+          overwrite_files: true

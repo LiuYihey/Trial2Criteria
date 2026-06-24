@@ -2,8 +2,10 @@
 
 <p align="center">
   <a href="https://github.com/LiuYihey/Trial2Criteria/releases/download/demo-video/video-project.mp4">
-    <img src="https://github.com/LiuYihey/Trial2Criteria/raw/main/docs/demo.gif" alt="Trial2Criteria demo video" width="900">
+    <img src="https://github.com/LiuYihey/Trial2Criteria/raw/main/docs/demo.gif" alt="Trial2Criteria demo video" width="1000">
   </a>
+  <br>
+  <sub>▶ 点击查看完整演示视频</sub>
 </p>
 
 Four-domain retrieval-augmented generation for clinical trial eligibility criteria:

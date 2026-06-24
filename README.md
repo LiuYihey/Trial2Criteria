@@ -6,56 +6,44 @@ Click the GIF to watch the full demo video.
   <img src="https://github.com/LiuYihey/Trial2Criteria/raw/main/docs/demo.gif" alt="Trial2Criteria demo video" width="1920">
 </a>
 
+<br>
+
 Four-domain retrieval-augmented generation for clinical trial eligibility criteria:
 
-| Domain | Source | Module |
-|--------|--------|--------|
-| **PrimeKG** | Disease features & gene associations | `vendor/primekg/advanced_disease_extractor.py` |
-| **DrugBank** | Drug mechanisms & indications | `clinical_rag/domains/drugbank/` |
-| **ClinicalTrials.gov** | Similar trials (Phase 1/2/3) | `vendor/trial2vec/` (Trial2Vec) |
-| **PubMed** | Related medical literature | Entrez + FAISS + BGE reranker |
+| Domain | Source | Role |
+|--------|--------|------|
+| **PrimeKG** | Disease knowledge graph | Disease features and gene associations |
+| **DrugBank** | Drug database | Mechanisms, indications, and drug matching |
+| **ClinicalTrials.gov** | Trial registry | Similar Phase 1/2/3 trials via Trial2Vec |
+| **PubMed** | Medical literature | Related papers with FAISS retrieval and BGE reranking |
 
-## Repository layout
+## Project structure
 
 ```
 Trial2Criteria/
-├── clinical_rag/          # Main Python package
-│   ├── search.py          # Full RAG + LLM criteria generation (Web / CLI)
-│   ├── batch.py           # Batch retrieval → JSONL (no LLM)
-│   ├── pipeline/          # Prompt / response / reasoning generation
-│   └── domains/drugbank/  # Drug name matching
-├── vendor/
-│   ├── primekg/           # PrimeKG disease extractor (upstream)
-│   └── trial2vec/         # Trial2Vec similarity search (upstream)
-├── data/                  # Runtime datasets (see data/README.md)
-├── data_prep/             # ETL scripts to build datasets
-├── templates/             # LLM prompt templates
-├── web/                   # FastAPI web UI
-├── outputs/               # Generated artifacts (gitignored)
-├── config.example.json    # Configuration template
-└── requirements.txt
+├── clinical_rag/     # Core RAG pipeline and CLI
+├── vendor/           # PrimeKG and Trial2Vec integrations
+├── data/             # Runtime datasets
+├── data_prep/        # Dataset build scripts
+├── templates/        # LLM prompt templates
+├── web/              # FastAPI web UI
+└── config.example.json
 ```
 
 ## Setup
 
 ```bash
-# 1. Clone and install dependencies
 pip install -r requirements.txt
 pip install -e vendor/trial2vec
 
-# 2. Configure
 cp config.example.json config.json
 cp .env.example .env
-# Fill in entrez_email and API keys in config.json (or set ENTREZ_EMAIL / ARK_API_KEY)
-
-# 3. Prepare data (see data/README.md)
-#    - data/drugbank/drugbank_data_v1.csv
-#    - data/primekg/disease_features.csv
-#    - data/trial_gov/embeddings/*.pth
-#    - data/trial_gov/retrieval_base/*.csv
+# Edit config.json with your Entrez email and API keys
 ```
 
-PubMed retrieval requires only an NCBI Entrez **email** — no API key.
+Prepare the datasets listed in `data/README.md` (DrugBank, PrimeKG, ClinicalTrials.gov embeddings, and retrieval bases).
+
+PubMed retrieval needs only an NCBI Entrez email — no API key.
 
 ## Usage
 
@@ -81,13 +69,6 @@ clinical-rag-responses --prompts_dir outputs/prompts/
 clinical-rag-reasoning
 ```
 
-Equivalent module invocations:
-
-```bash
-python -m clinical_rag.batch
-python -m clinical_rag.pipeline.generate_prompts
-```
-
 ### Interactive CLI
 
 ```bash
@@ -96,24 +77,20 @@ python clinical_rag/cli.py
 
 ## Data preparation
 
-| Domain | Scripts |
-|--------|---------|
-| DrugBank | `data_prep/drugbank/` — XML → JSON → CSV |
-| ClinicalTrials.gov | `data_prep/trial_gov/` — filter, reformat, build retrieval base |
+| Domain | Location |
+|--------|----------|
+| DrugBank | `data_prep/drugbank/` |
+| ClinicalTrials.gov | `data_prep/trial_gov/` |
 | Trial2Vec embeddings | `vendor/trial2vec/trial_search/Embedding_Retrieve/` |
 | PrimeKG features | `vendor/primekg/codes/` |
 
 ## Configuration
 
-All paths are relative to the project root. See `config.example.json`.
-
-Secrets can be set via environment variables:
+Copy `config.example.json` to `config.json` and set your credentials. You can also use environment variables:
 
 - `ENTREZ_EMAIL` — NCBI Entrez email
 - `ARK_API_KEY` — Volcengine Ark API key for DeepSeek models
 
-Never commit `config.json`, `.env`, or `api_key.md` — they are listed in `.gitignore`.
-
 ## License
 
-Third-party components retain their original licenses (`vendor/primekg/LICENSE`, etc.).
+Third-party components in `vendor/` retain their original licenses.

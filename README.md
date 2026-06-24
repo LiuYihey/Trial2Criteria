@@ -6,7 +6,7 @@ Click the GIF to watch the full demo video.
   <img src="https://github.com/LiuYihey/Trial2Criteria/raw/main/docs/demo.gif" alt="Trial2Criteria demo video" width="1920">
 </a>
 
-<br>
+<br><br>
 
 Four-domain retrieval-augmented generation for clinical trial eligibility criteria:
 
